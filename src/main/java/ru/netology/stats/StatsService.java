@@ -29,12 +29,32 @@ public class StatsService {
     }
 
     public int minMonth(int[] sales) {
-        int min = sales[0];
+        int min = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < min) {
+            if (sales[i] < sales[min]) {
                 min = i;
             }
         }
         return min + 1;
+    }
+
+    public int belowMiddle(int[] sales) {
+        int allMonthBelow = 0;
+        for (int q = 0; q < sales.length; q++) {
+            if (sales[q] < sumMiddle(sales)) {
+                allMonthBelow = allMonthBelow + 1;
+            }
+        }
+        return allMonthBelow;
+    }
+
+    public int aboveMiddle(int[] sales) {
+        int allMonthAbove = 0;
+        for (int z = 0; z < sales.length; z++) {
+            if (sales[z] >= sumMiddle(sales)) {
+                allMonthAbove = allMonthAbove + 1;
+            }
+        }
+        return allMonthAbove;
     }
 }

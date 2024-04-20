@@ -52,4 +52,28 @@ public class StatsServiceTest {
 
         Assertions.assertEquals(expectedMonth, actualMonth);
     }
+
+    @Test
+    public void allMonthBelowMiddle() {
+        StatsService service = new StatsService();
+
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expected = 5;
+        int actual = service.belowMiddle(sales);
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void allMonthAboveMiddle() {
+        StatsService service = new StatsService();
+
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expected = 7;
+        int actual = service.aboveMiddle(sales);
+
+        Assertions.assertEquals(expected, actual);
+    }
 }
