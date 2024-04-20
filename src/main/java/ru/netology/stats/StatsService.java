@@ -16,6 +16,15 @@ public class StatsService {
         }
         int middle = all / 12;
         return middle;
+    }
 
+    public int maxMonth(int[] sales) {
+        int max = sales[0];
+            for (int t : sales) {
+                if (t < max) {
+                    max = t;
+                }
+            }
+            return max;
     }
 }
