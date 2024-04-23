@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         StatsService service = new StatsService();
 
-        int[] sales = {4, 22, 13, 6, 8, 17, 20, 13, 21, 18, 16, 10};
+        long[] sales = {4, 22, 13, 6, 8, 17, 20, 13, 21, 18, 16, 10};
 
         System.out.println(Arrays.toString(sales));
         System.out.println("Сумма продаж - " + service.sumAll(sales));

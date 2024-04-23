@@ -9,10 +9,10 @@ public class StatsServiceTest {
     public void allSales() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedSales = 180;
-        int actualSales = service.sumAll(sales);
+        long expectedSales = 180;
+        long actualSales = service.sumAll(sales);
 
         Assertions.assertEquals(expectedSales, actualSales);
     }
@@ -21,10 +21,10 @@ public class StatsServiceTest {
     public void middleSum() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedMiddle = 15;
-        int actualMiddle = service.sumMiddle(sales);
+        long expectedMiddle = 15;
+        long actualMiddle = service.sumMiddle(sales);
 
         Assertions.assertEquals(expectedMiddle, actualMiddle);
     }
@@ -33,10 +33,10 @@ public class StatsServiceTest {
     public void maxSales() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedMonth = 8;
-        int actualMonth = service.maxMonth(sales);
+        long expectedMonth = 8;
+        long actualMonth = service.maxMonth(sales);
 
         Assertions.assertEquals(expectedMonth, actualMonth);
     }
@@ -45,10 +45,10 @@ public class StatsServiceTest {
     public void minSales() {
         StatsService service= new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedMonth = 9;
-        int actualMonth = service.minMonth(sales);
+        long expectedMonth = 9;
+        long actualMonth = service.minMonth(sales);
 
         Assertions.assertEquals(expectedMonth, actualMonth);
     }
@@ -57,10 +57,10 @@ public class StatsServiceTest {
     public void allMonthBelowMiddle() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expected = 5;
-        int actual = service.belowMiddle(sales);
+        long expected = 5;
+        long actual = service.belowMiddle(sales);
 
         Assertions.assertEquals(expected, actual);
     }
@@ -69,10 +69,10 @@ public class StatsServiceTest {
     public void allMonthAboveMiddle() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expected = 7;
-        int actual = service.aboveMiddle(sales);
+        long expected = 7;
+        long actual = service.aboveMiddle(sales);
 
         Assertions.assertEquals(expected, actual);
     }

@@ -1,34 +1,34 @@
 package ru.netology.stats;
 
 public class StatsService {
-    public int sumAll(int[] sales) {
-        int all = 0;
+    public long sumAll(long[] sales) {
+        long all = 0;
         for (int i = 0; i < sales.length; i++) {
             all = all + sales[i];
         }
         return all;
     }
 
-    public int sumMiddle(int[] sales) {
-        int all = 0;
+    public long sumMiddle(long[] sales) {
+        long all = 0;
         for (int i = 0; i < sales.length; i++) {
             all = all + sales[i];
         }
-        int middle = all / 12;
+        long middle = all / 12;
         return middle;
     }
 
-    public int maxMonth(int[] sales) {
+    public int maxMonth(long[] sales) {
         int max = 0;
-        for (int t = 0; t < sales.length; t++) {
-            if (sales[t] >= sales[max]) {
-                max = t;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] >= sales[max]) {
+                max = i;
             }
         }
         return max + 1;
     }
 
-    public int minMonth(int[] sales) {
+    public int minMonth(long[] sales) {
         int min = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < sales[min]) {
@@ -38,20 +38,22 @@ public class StatsService {
         return min + 1;
     }
 
-    public int belowMiddle(int[] sales) {
-        int allMonthBelow = 0;
-        for (int q = 0; q < sales.length; q++) {
-            if (sales[q] < sumMiddle(sales)) {
+    public long belowMiddle(long[] sales) {
+        long allMonthBelow = 0;
+        long middle = sumMiddle(sales);
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] < middle) {
                 allMonthBelow = allMonthBelow + 1;
             }
         }
         return allMonthBelow;
     }
 
-    public int aboveMiddle(int[] sales) {
-        int allMonthAbove = 0;
-        for (int z = 0; z < sales.length; z++) {
-            if (sales[z] >= sumMiddle(sales)) {
+    public long aboveMiddle(long[] sales) {
+        long allMonthAbove = 0;
+        long middle = sumMiddle(sales);
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] >= middle) {
                 allMonthAbove = allMonthAbove + 1;
             }
         }
